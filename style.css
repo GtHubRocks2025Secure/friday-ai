@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  background: black;
+  color: #00ffff;
+  font-family: 'Orbitron', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.hologram {
+  text-align: center;
+  background: rgba(0, 255, 255, 0.1);
+  border: 1px solid cyan;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 0 20px cyan;
+}
+
+button {
+  background: black;
+  color: cyan;
+  border: 1px solid cyan;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+}
