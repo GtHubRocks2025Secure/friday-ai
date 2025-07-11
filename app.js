@@ -49,7 +49,7 @@ async function askFriday(question) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: "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",
+        Authorization: "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",
       },
       body: JSON.stringify({
         model: "gpt-3.5-turbo",
