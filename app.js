@@ -43,19 +43,33 @@ function speak(text) {
   }
 }
 
+// ✅ Proxy-powered Friday AI
 async function askFriday(question) {
   try {
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+    const response = await fetch("https://friday-ai-chat.vercel.app/api/friday", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer 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",
+        "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        model: "gpt-3.5-turbo",
-        messages: [{ role: "user", content: question }],
+        question: question
       }),
     });
+
+    const data = await response.json();
+    console.log("Friday proxy replied:", data);
+
+    if (data.reply) {
+      return data.reply;
+    } else {
+      return "Friday couldn’t understand that.";
+    }
+  } catch (error) {
+    console.error("Proxy fetch error:", error);
+    return "There was an error contacting Friday's server.";
+  }
+}
+
 
     const data = await response.json();
     console.log("API response:", data);
